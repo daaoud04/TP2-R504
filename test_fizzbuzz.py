@@ -1,6 +1,7 @@
 import unittest
 from io import StringIO
 import sys
+from fizzbuzz import affiche  # Assurez-vous que l'importation est correcte
 
 class TestFizzBuzz(unittest.TestCase):
     def test_fizzbuzz_5_10(self):
@@ -23,3 +24,4 @@ class TestFizzBuzz(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
