@@ -1,12 +1,12 @@
 def affiche(n1, n2):
-    output = ""
+    result = ""
     for i in range(n1, n2 + 1):
         if i % 15 == 0:
-            output += "FrisBee"
+            result += "FrisBee"
         elif i % 3 == 0:
-            output += "Fizz"
+            result += "Fizz"
         elif i % 5 == 0:
-            output += "Buzz"
+            result += "Buzz"
         else:
-            output += str(i)
-    print(output)
+            result += str(i)
+    print(result)

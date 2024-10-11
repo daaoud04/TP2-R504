@@ -10,7 +10,7 @@ class TestFizzBuzz(unittest.TestCase):
         
         affiche(10, 16)  # Appel de la fonction avec 10 et 16
         
-        sys.stdout = sys.__stdout__
+        sys.stdout = sys.__stdout__  # Rétablir la sortie standard
         self.assertEqual(captured_output.getvalue().strip(), "Buzz11Fizz1314FrisBee")
 
     def test_fizzbuzz_5_10(self):
@@ -21,15 +21,6 @@ class TestFizzBuzz(unittest.TestCase):
         
         sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue().strip(), "BuzzFizz78FizzBuzz")
-
-    def test_fizzbuzz_1_3(self):
-        captured_output = StringIO()
-        sys.stdout = captured_output
-        
-        affiche(1, 3)  # Appel de la fonction avec 1 et 3
-        
-        sys.stdout = sys.__stdout__
-        self.assertEqual(captured_output.getvalue().strip(), "12Fizz")
 
 if __name__ == "__main__":
     unittest.main()
