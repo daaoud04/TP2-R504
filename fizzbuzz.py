@@ -10,3 +10,7 @@ def affiche(n1, n2):
         else:
             result += str(i)
     print(result)
+
+# Exemples d'exécution
+affiche(5, 10)  # Affiche : BuzzFizz78FizzBuzz
+affiche(10, 16)  # Affiche : Buzz11Fizz1314FrisBee16
