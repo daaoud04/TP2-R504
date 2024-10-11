@@ -11,7 +11,7 @@ class TestFizzBuzz(unittest.TestCase):
         affiche(10, 16)  # Appel de la fonction avec 10 et 16
         
         sys.stdout = sys.__stdout__  # Rétablir la sortie standard
-        self.assertEqual(captured_output.getvalue().strip(), "Buzz11Fizz1314FrisBee")
+        self.assertEqual(captured_output.getvalue().strip(), "Buzz11Fizz1314FrisBee")  # Vérifiez que cela correspond
 
     def test_fizzbuzz_5_10(self):
         captured_output = StringIO()
