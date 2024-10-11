@@ -4,25 +4,43 @@ import sys
 from fizzbuzz import affiche
 
 class TestFizzBuzz(unittest.TestCase):
-    def test_fizzbuzz(self):
+    def test_fizzbuzz_15(self):
         # Rediriger la sortie vers un StringIO
         captured_output = StringIO()
         sys.stdout = captured_output
         
-        affiche()  # Appel de la fonction sans paramètres
+        affiche(15)  # Appel de la fonction avec 15
         
         # Récupérer la sortie
         sys.stdout = sys.__stdout__  # Rétablir la sortie standard
-        expected_output = (
-            "12Fizz4BuzzFizz78FizzBuzz11Fizz1314FrisBee1617Fizz"
-            "19FizzBuzz22Fizz24FrisBee26Fizz28FizzBuzz31Fizz33"
-            "FrisBee36Fizz38FizzBuzz41Fizz43FrisBee46Fizz48"
-            "FizzBuzz51Fizz53FrisBee56Fizz58FizzBuzz61Fizz63"
-            "FrisBee66Fizz68FizzBuzz71Fizz73FrisBee76Fizz78"
-            "FizzBuzz81Fizz83FrisBee86Fizz88FizzBuzz91Fizz93"
-            "FrisBee96Fizz98FizzBuzz"
-        )
-        self.assertEqual(captured_output.getvalue().strip(), expected_output)
+        self.assertEqual(captured_output.getvalue().strip(), "12Fizz4BuzzFizz78FizzBuzz11Fizz1314FrisBee")
+
+    def test_fizzbuzz_5(self):
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        
+        affiche(5)  # Appel de la fonction avec 5
+        
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue().strip(), "12Fizz4Buzz")
+
+    def test_fizzbuzz_1(self):
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        
+        affiche(1)  # Appel de la fonction avec 1
+        
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue().strip(), "1")
+
+    def test_fizzbuzz_3(self):
+        captured_output = StringIO()
+        sys.stdout = captured_output
+        
+        affiche(3)  # Appel de la fonction avec 3
+        
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue().strip(), "12Fizz")
 
 if __name__ == "__main__":
     unittest.main()
