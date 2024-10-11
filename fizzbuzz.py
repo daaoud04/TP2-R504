@@ -1,6 +1,6 @@
-def affiche(n):
+def affiche(n1, n2):
     output = ""
-    for i in range(1, n + 1):
+    for i in range(n1, n2 + 1):
         if i % 15 == 0:
             output += "FrisBee"
         elif i % 3 == 0:
