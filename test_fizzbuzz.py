@@ -4,40 +4,29 @@ import sys
 from fizzbuzz import affiche
 
 class TestFizzBuzz(unittest.TestCase):
-    def test_fizzbuzz_15(self):
-        # Rediriger la sortie vers un StringIO
+    def test_fizzbuzz_10_16(self):
         captured_output = StringIO()
         sys.stdout = captured_output
         
-        affiche(15)  # Appel de la fonction avec 15
-        
-        # Récupérer la sortie
-        sys.stdout = sys.__stdout__  # Rétablir la sortie standard
-        self.assertEqual(captured_output.getvalue().strip(), "12Fizz4BuzzFizz78FizzBuzz11Fizz1314FrisBee")
-
-    def test_fizzbuzz_5(self):
-        captured_output = StringIO()
-        sys.stdout = captured_output
-        
-        affiche(5)  # Appel de la fonction avec 5
+        affiche(10, 16)  # Appel de la fonction avec 10 et 16
         
         sys.stdout = sys.__stdout__
-        self.assertEqual(captured_output.getvalue().strip(), "12Fizz4Buzz")
+        self.assertEqual(captured_output.getvalue().strip(), "Buzz11Fizz1314FrisBee")
 
-    def test_fizzbuzz_1(self):
+    def test_fizzbuzz_5_10(self):
         captured_output = StringIO()
         sys.stdout = captured_output
         
-        affiche(1)  # Appel de la fonction avec 1
+        affiche(5, 10)  # Appel de la fonction avec 5 et 10
         
         sys.stdout = sys.__stdout__
-        self.assertEqual(captured_output.getvalue().strip(), "1")
+        self.assertEqual(captured_output.getvalue().strip(), "BuzzFizz78FizzBuzz")
 
-    def test_fizzbuzz_3(self):
+    def test_fizzbuzz_1_3(self):
         captured_output = StringIO()
         sys.stdout = captured_output
         
-        affiche(3)  # Appel de la fonction avec 3
+        affiche(1, 3)  # Appel de la fonction avec 1 et 3
         
         sys.stdout = sys.__stdout__
         self.assertEqual(captured_output.getvalue().strip(), "12Fizz")
